@@ -1,1 +1,127 @@
 
+version 1
+
+void move_paddle_ai()
+{
+    int pos;
+     if(ball.x==35)
+    {
+        pos=ball.y;//ta reda på vad har ball.y för position när ball.x är 35, för att då bildas det en kvadrat, 
+    }
+    if(ball.x<35)
+    {
+        if(pos<=8)
+        move_paddle1_up();//det ska vara move_paddle1_down(); men det fungerade inte när jag testade
+        
+        if(pos>8 && pos<16)
+        {
+            if(ball.x>30) //paddle ska gå ner åt 4 steg
+                move_paddle1_up();//det ska vara move_paddle1_down(), men det fungerade inte
+        }
+        if (pos>=17 && pos<25)
+        {
+            if(ball.x>30)// paddle ska gå upp 4 steg
+                move_paddle1_down();
+        }// det ska vara move_paddle1_up(), men fungerade ej
+        
+        if(pos>=25)
+            move_paddle1_down();// det ska vara move_paddle1_up(), men fungerad ej
+    }
+         
+          if (ball.dx>0) // om ballen flyger åt höger sidan, reset paddle1
+       {
+           if(p1.y>12)
+           {
+               move_paddle1_up();
+           }
+           if(p1.y<12)
+           {
+               move_paddle1_down();
+           }
+       }
+    }
+    
+    
+    
+    
+    
+    
+    Version 2
+    
+    void move_paddle_ai()
+{
+    int pos,j;
+     if(ball.x==35)
+    {
+        pos=ball.y;//ta reda på vad har ball.y för position när ball.x är 35, för att då bildas det en kvadrat, 
+        j =ball.dy;
+    }
+    
+    if(ball.x<30)
+    {
+     if ((pos*j)>0) //bollen går neråt
+    {
+        if(pos<=8)
+        move_paddle1_up();
+        
+        if(pos>8 && pos<=16)
+        {
+           //if(ball.x>20)
+                move_paddle1_down();//down
+        }
+        if (pos>16 && pos<=24)
+        {
+            // if(ball.x>10)
+                move_paddle1_down();
+                }//down
+        if(pos>=25)
+            move_paddle1_down();
+    }
+    }
+     
+         
+          if (ball.dx>0) // om ballen flyger åt höger sidan, reset paddle1
+       {
+           if(p1.y>12){
+               move_paddle1_up();}
+           if(p1.y<12){
+               move_paddle1_down();}
+       }
+    }
+    
+    
+    version 3
+    
+    
+    void move_paddle_ai()
+    {
+    int pos,j;
+     if(ball.x==35)
+    {
+        pos=ball.y;//ta reda på vad har ball.y för position när ball.x är 35, för att då bildas det en kvadrat, 
+        direction =ball.dy;
+    }
+    if(ball.x<35 && direction<0)//ballen går upp åt
+    {
+    if(ball.y<p1.y)//om ballen ligger ovanför paddle
+    move_paddle1_up();
+    }
+    if(ball.x<35 && direction>0)//ballen går ner åt
+    {
+    if(ball.y>p1.y)// om ballen ligger nedanför paddle
+    move_paddle1_down();
+    }
+    
+    
+          if (ball.dx>0) // om ballen flyger åt höger sidan, reset paddle1
+       {
+           if(p1.y>12){
+               move_paddle1_up();}
+           if(p1.y<12){
+               move_paddle1_down();}
+       }
+    }
+    
+    
+    
+    
