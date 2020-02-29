@@ -104,7 +104,7 @@ void move_paddle_ai()
     if(ball.x<35 && direction<0)//ballen går upp åt
     {
     if(ball.y<p1.y)//om ballen ligger ovanför paddle
-    move_paddle1_up();
+    move_paddle1_up(); // flyttar paddel uppåt
     }
     if(ball.x<35 && direction>0)//ballen går ner åt
     {
