@@ -53,8 +53,7 @@ void move_paddle_ai()
     int pos,j;
      if(ball.x==35)
     {
-        pos=ball.y;//ta reda på vad har ball.y för position när ball.x är 35, för att då bildas det en kvadrat, 
-        j =ball.dy;
+        pos=ball.y;//ta reda på vad har ball.y för position när ball.x är 35, 
     }
     
     if(ball.x<30)
@@ -95,10 +94,10 @@ void move_paddle_ai()
     
     void move_paddle_ai()
     {
-    int pos,j;
+    int pos,direction;
      if(ball.x==35)
     {
-        pos=ball.y;//ta reda på vad har ball.y för position när ball.x är 35, för att då bildas det en kvadrat, 
+        pos=ball.y;//ta reda på vad har ball.y för position när ball.x är 35, vet ej om det är bra punkt för paddel att börja flytta sig efter bollen 
         direction =ball.dy;
     }
     if(ball.x<35 && direction<0)//ballen går upp åt
@@ -115,9 +114,11 @@ void move_paddle_ai()
     
           if (ball.dx>0) // om ballen flyger åt höger sidan, reset paddle1
        {
-           if(p1.y>12){
+           if(p1.y>12)
+           {
                move_paddle1_up();}
-           if(p1.y<12){
+           if(p1.y<12)
+           {
                move_paddle1_down();}
        }
     }
